@@ -5,6 +5,8 @@
 	<Nullable>enable</Nullable>
 	<Description>A parser for a text adventure game. Can recognize sentences such as "go north", "use gold key on door" and "give food to Gandalf".</Description>
 	<Company>Anders Hesselbom</Company>
+	<RepositoryUrl>https://github.com/Anders-H/TextAdventureGameInputParser</RepositoryUrl>
+	<PackageProjectUrl>https://github.com/Anders-H/TextAdventureGameInputParser/blob/master/README.md</PackageProjectUrl>
 </PropertyGroup>
 
 </Project>

@@ -23,7 +23,7 @@
         public override string GetDescription() =>
             PrecedingAdjective == null
                 ? $"[Noun]{Value}({ConfString})"
-                : $"[Adj/Noun]{Value} {PrecedingAdjective.Value}({ConfString})";
+                : $"[Adj/Noun]{PrecedingAdjective.Value} {Value}({ConfString})";
 
         private string ConfString =>
             Confident ? "Confident" : "Ambigous!";
