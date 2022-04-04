@@ -8,6 +8,8 @@
 	<RepositoryUrl>https://github.com/Anders-H/TextAdventureGameInputParser</RepositoryUrl>
 	<PackageProjectUrl>https://github.com/Anders-H/TextAdventureGameInputParser/blob/master/README.md</PackageProjectUrl>
 	<PackageReleaseNotes>Moved to .NET 6.0.</PackageReleaseNotes>
+	<AssemblyVersion>1.0.1</AssemblyVersion>
+	<FileVersion>1.0.1</FileVersion>
 </PropertyGroup>
 
 </Project>
