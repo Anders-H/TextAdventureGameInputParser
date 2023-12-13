@@ -1,47 +1,49 @@
 ﻿using System;
 using TextAdventureGameInputParser;
 
-namespace TestConsole
+namespace TestConsole;
+
+internal class Program
 {
-    internal class Program
+    private static void Main()
     {
-        private static void Main()
+        var parser = CreateParser();
+        do
         {
-            var parser = CreateParser();
-            do
-            {
-                Console.Write("Parse what?> ");
-                var input = Console.ReadLine() ?? "";
-                if (string.IsNullOrWhiteSpace(input))
-                    return;
-                Console.WriteLine(parser.Parse(input));
-            } while (true);
-        }
+            Console.Write("Parse what?> ");
+            var input = Console.ReadLine() ?? "";
+            
+            if (string.IsNullOrWhiteSpace(input))
+                return;
+            
+            Console.WriteLine(parser.Parse(input));
 
-        private static Parser CreateParser()
-        {
-            var parser = new Parser();
+        } while (true);
+    }
 
-            parser.AddVerbs("GO", "OPEN", "CLOSE", "GIVE", "SHOW", "LOOK", "INVENTORY", "GET", "TAKE", "DROP", "USE");
-            parser.AddImportantFillers("TO", "ON", "IN");
-            parser.AddUnimportantFillers("THE", "A", "AN", "AT");
-            parser.AddNouns(
-                "NORTH",
-                "EAST",
-                "WEST",
-                "SOUTH",
-                "GREEN DOOR",
-                "BLUE DOOR",
-                "SKELETON KEY",
-                "GOLD KEY"
-            );
-            parser.Aliases.Add("GO NORTH", "N", "NORTH");
-            parser.Aliases.Add("GO EAST", "E", "EAST");
-            parser.Aliases.Add("GO SOUTH", "S", "SOUTH");
-            parser.Aliases.Add("GO WEST", "W", "WEST");
-            parser.Aliases.Add("INVENTORY", "I", "INV");
+    private static Parser CreateParser()
+    {
+        var parser = new Parser();
 
-            return parser;
-        }
+        parser.AddVerbs("GO", "OPEN", "CLOSE", "GIVE", "SHOW", "LOOK", "INVENTORY", "GET", "TAKE", "DROP", "USE");
+        parser.AddImportantFillers("TO", "ON", "IN");
+        parser.AddUnimportantFillers("THE", "A", "AN", "AT");
+        parser.AddNouns(
+            "NORTH",
+            "EAST",
+            "WEST",
+            "SOUTH",
+            "GREEN DOOR",
+            "BLUE DOOR",
+            "SKELETON KEY",
+            "GOLD KEY"
+        );
+        parser.Aliases.Add("GO NORTH", "N", "NORTH");
+        parser.Aliases.Add("GO EAST", "E", "EAST");
+        parser.Aliases.Add("GO SOUTH", "S", "SOUTH");
+        parser.Aliases.Add("GO WEST", "W", "WEST");
+        parser.Aliases.Add("INVENTORY", "I", "INV");
+
+        return parser;
     }
 }

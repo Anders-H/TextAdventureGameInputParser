@@ -1,30 +1,32 @@
 ﻿using System.Text;
 
-namespace TextAdventureGameInputParser
+namespace TextAdventureGameInputParser;
+
+public class InputCleaner
 {
-    public class InputCleaner
+    private readonly string _input;
+
+    public InputCleaner(string input)
     {
-        private readonly string _input;
+        _input = (input ?? "")
+            .ToUpper()
+            .Trim();
+    }
 
-        public InputCleaner(string input)
+    public string GetCleanInput()
+    {
+        var result = new StringBuilder();
+        const string allowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        
+        foreach (var c in _input)
         {
-            _input = (input ?? "")
-                .ToUpper()
-                .Trim();
+            if (allowed.IndexOf(c) >= 0)
+                result.Append(c);
+            
+            if (c == ' ' && !result.ToString().EndsWith(" "))
+                result.Append(" ");
         }
 
-        public string GetCleanInput()
-        {
-            var result = new StringBuilder();
-            const string allowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            foreach (var c in _input)
-            {
-                if (allowed.IndexOf(c) >= 0)
-                    result.Append(c);
-                if (c == ' ' && !result.ToString().EndsWith(" "))
-                    result.Append(" ");
-            }
-            return result.ToString();
-        }
+        return result.ToString();
     }
 }

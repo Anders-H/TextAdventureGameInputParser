@@ -1,12 +1,11 @@
-﻿namespace TextAdventureGameInputParser.WordClass
-{
-    public class Verb : Word
-    {
-        public Verb(string value) : base(value)
-        {
-        }
+﻿namespace TextAdventureGameInputParser.WordClass;
 
-        public override string GetDescription() =>
-            $"[Verb]{Value}";
+public class Verb : Word
+{
+    public Verb(string value) : base(value)
+    {
     }
+
+    public override string GetDescription() =>
+        $"[Verb]{Value}";
 }

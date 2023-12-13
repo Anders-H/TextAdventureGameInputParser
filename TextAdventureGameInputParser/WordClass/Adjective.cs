@@ -1,12 +1,11 @@
-﻿namespace TextAdventureGameInputParser.WordClass
-{
-    public class Adjective : Word
-    {
-        public Adjective(string value) : base(value)
-        {
-        }
+﻿namespace TextAdventureGameInputParser.WordClass;
 
-        public override string GetDescription() =>
-            $"[Adj]{Value}";
+public class Adjective : Word
+{
+    public Adjective(string value) : base(value)
+    {
     }
+
+    public override string GetDescription() =>
+        $"[Adj]{Value}";
 }

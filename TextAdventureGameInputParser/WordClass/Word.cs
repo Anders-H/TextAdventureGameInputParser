@@ -1,19 +1,18 @@
-﻿namespace TextAdventureGameInputParser.WordClass
+﻿namespace TextAdventureGameInputParser.WordClass;
+
+public abstract class Word
 {
-    public abstract class Word
+    public string Value { get; set; }
+
+    protected Word(string value)
     {
-        public string Value { get; set; }
-
-        protected Word(string value)
-        {
-            Value = (value ?? "")
-                .ToUpper()
-                .Trim();
-        }
-
-        public override string ToString() =>
-            Value;
-
-        public abstract string GetDescription();
+        Value = (value ?? "")
+            .ToUpper()
+            .Trim();
     }
+
+    public override string ToString() =>
+        Value;
+
+    public abstract string GetDescription();
 }
