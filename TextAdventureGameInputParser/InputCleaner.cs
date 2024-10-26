@@ -6,7 +6,7 @@ public class InputCleaner
 {
     private readonly string _input;
 
-    public InputCleaner(string input)
+    public InputCleaner(string? input)
     {
         _input = (input ?? "")
             .ToUpper()

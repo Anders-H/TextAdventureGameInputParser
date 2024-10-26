@@ -34,8 +34,7 @@ public class Sentence
     }
 
     public bool Ambiguous =>
-        (Word4 != null && !Word4Confident)
-        || (Word7 != null && !Word7Confident);
+        (Word4 != null && !Word4Confident) || (Word7 != null && !Word7Confident);
 
     public List<Word> AllWords
     {
@@ -102,7 +101,6 @@ public class Sentence
     public override string ToString()
     {
         var s = new StringBuilder();
-            
         s.AppendLine($"Input:           {CleanInput}");
         s.AppendLine($"Parse success:   {ParseSuccess}");
 
@@ -114,8 +112,7 @@ public class Sentence
         foreach (var w in AllWords)
             s.AppendLine($"Word:            {w.GetDescription()}");
 
-        s.AppendLine($"Important words: ");
-
+        s.AppendLine("Important words:");
         var s2 = new StringBuilder();
 
         foreach (var w in ImportantWords)
@@ -124,10 +121,5 @@ public class Sentence
         s.AppendLine(s2.ToString().Trim());
 
         return s.ToString();
-    }
-
-    public static Sentence ParseFailed(string cleanInput)
-    {
-        return new Sentence(cleanInput);
     }
 }

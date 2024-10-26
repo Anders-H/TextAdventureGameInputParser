@@ -6,9 +6,9 @@ public class Filler : Word
 
     public Filler(string value, bool isImportant) : base(value)
     {
-        IsImportant = false;
+        IsImportant = isImportant;
     }
 
     public override string GetDescription() =>
-        $"[Fill]{Value}{(IsImportant ? "(imporant)" : "(not important?)")}";
+        $"[Fill]{Value}{(IsImportant ? "(important)" : "(not important?)")}";
 }

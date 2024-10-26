@@ -18,7 +18,7 @@ public class Noun : Word
     }
 
     public string FullString() =>
-        $@"{(PrecedingAdjective?.Value ?? "")} {Value}".Trim();
+        $"{(PrecedingAdjective?.Value ?? "")} {Value}".Trim();
 
     public override string GetDescription() =>
         PrecedingAdjective == null
@@ -26,5 +26,5 @@ public class Noun : Word
             : $"[Adj/Noun]{PrecedingAdjective.Value} {Value}({ConfString})";
 
     private string ConfString =>
-        Confident ? "Confident" : "Ambigous!";
+        Confident ? "Confident" : "Ambiguous";
 }

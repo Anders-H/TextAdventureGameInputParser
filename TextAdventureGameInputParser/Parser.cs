@@ -14,9 +14,9 @@ public class Parser
     public Parser()
     {
         Aliases = new AliasList();
-        Verbs = new List<Verb>();
-        Fillers = new List<Filler>();
-        Nouns = new List<Noun>();
+        Verbs = [];
+        Fillers = [];
+        Nouns = [];
     }
 
     public Sentence Parse(string input)
@@ -48,7 +48,6 @@ public class Parser
                 : toParse;
 
         result.ParseSuccess = result.Word1 != null && string.IsNullOrWhiteSpace(result.UnknownWord);
-
         return result;
     }
 
@@ -56,11 +55,11 @@ public class Parser
     {
         foreach (var verb in Verbs.OrderByDescending(x => x.ToString().Length))
         {
-            if (toParse == verb.Value || toParse.StartsWith(verb.Value + " "))
-            {
-                toParse = toParse.Substring(verb.Value.Length).Trim();
-                return verb;
-            }
+            if (toParse != verb.Value && !toParse.StartsWith(verb.Value + " "))
+                continue;
+            
+            toParse = toParse.Substring(verb.Value.Length).Trim();
+            return verb;
         }
 
         return null;
