@@ -7,10 +7,10 @@
 	<Company>Anders Hesselbom</Company>
 	<RepositoryUrl>https://github.com/Anders-H/TextAdventureGameInputParser</RepositoryUrl>
 	<PackageProjectUrl>https://github.com/Anders-H/TextAdventureGameInputParser/blob/master/README.md</PackageProjectUrl>
-	<PackageReleaseNotes>Moved to .NET 8.0.</PackageReleaseNotes>
-	<AssemblyVersion>1.1</AssemblyVersion>
-	<FileVersion>1.1</FileVersion>
-	<Version>1.1</Version>
+	<PackageReleaseNotes>Some tiny bug fixes and spelling issues.</PackageReleaseNotes>
+	<AssemblyVersion>1.2</AssemblyVersion>
+	<FileVersion>1.2</FileVersion>
+	<Version>1.2</Version>
 </PropertyGroup>
 
 </Project>
